@@ -1,0 +1,26 @@
+{
+  "name": "uts-backend-2025",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClaudioTaffarel/UTS-BackEnd-2025.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ClaudioTaffarel/UTS-BackEnd-2025/issues"
+  },
+  "homepage": "https://github.com/ClaudioTaffarel/UTS-BackEnd-2025#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.12.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
