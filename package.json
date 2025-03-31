@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon index.js"
+    "test": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,11 @@
   "homepage": "https://github.com/ClaudioTaffarel/UTS-BackEnd-2025#readme",
   "description": "",
   "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "method-override": "^3.0.0",
     "mongoose": "^8.12.2"
   },
   "devDependencies": {
