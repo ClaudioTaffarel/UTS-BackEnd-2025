@@ -10,7 +10,7 @@ if (envFound.error) {
 module.exports = {
   env: process.env.NODE_ENV,
   api: {
-    prefix: '/api',
+    prefix: '/zelda.fanapis.com/api',
   },
   port: process.env.PORT || 3000,
   database: {
