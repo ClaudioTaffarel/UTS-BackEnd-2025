@@ -14,9 +14,11 @@ async function getStaffs(request, response, next) {
 async function getStaffById(request, response, next) {
   try {
     const staff = await staffService.getStaffById(request.params.id);
+
     if (!staff) {
       throw errorResponder(errorTypes.NOT_FOUND, 'Staff not found');
     }
+    
     return response.status(200).json(staff);
   } catch (error) {
     return next(error);

@@ -14,9 +14,11 @@ async function getGames(request, response, next) {
 async function getGameById(request, response, next) {
   try {
     const game = await gamesService.getGameById(request.params.id);
+
     if (!game) {
       throw errorResponder(errorTypes.NOT_FOUND, 'Game not found');
     }
+    
     return response.status(200).json(game);
   } catch (error) {
     return next(error);
