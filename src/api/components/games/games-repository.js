@@ -1,6 +1,6 @@
 const { Games } = require('../../../models');
 
-async function getGames(limit = 10, page = 0) {
+async function getGames(limit = 20, page = 0) {
   const skip = page * limit;
   return Games.find().limit(parseInt(limit)).skip(skip);
 }
