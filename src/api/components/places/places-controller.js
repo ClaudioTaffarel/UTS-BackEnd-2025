@@ -63,8 +63,8 @@ async function createPlaces(request, response, next) {
       throw errorResponder(errorTypes.VALIDATION_ERROR, 'Description is required');
     }
 
-    if (!inhabitants) {
-      throw errorResponder(errorTypes.VALIDATION_ERROR, 'Inhabitants is required');
+    if (!Array.isArray(inhabitants) || inhabitants.length === 0 || !inhabitants.every(i => typeof i === 'string')) {
+      throw errorResponder(errorTypes.VALIDATION_ERROR, 'Inhabitants must be a non-empty array of strings');
     }
 
     const success = await placesService.createPlaces(
