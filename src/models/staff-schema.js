@@ -3,7 +3,7 @@ module.exports = (db) =>
       'Staff',
       db.Schema({
         name: String,                     // nama staff
-        worked_on: String,                // bagian apa yang ia kerjakan
+        worked_on: [String],                // bagian apa yang ia kerjakan
         position: String                  // dia kerja sebagai apa?
       })
     );
