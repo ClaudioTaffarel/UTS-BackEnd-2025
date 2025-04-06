@@ -44,7 +44,7 @@ async function createQuests(request, response, next) {
   try {
     const { 
         name,
-        objective: objectives,
+        objectives,
         rewards,
     } = request.body;
 
@@ -80,7 +80,7 @@ async function createQuests(request, response, next) {
       );
     }
 
-    return response.status(200).json({ message: 'QUests Data created successfully' });
+    return response.status(200).json({ message: 'Quests Data created successfully' });
   } catch (error) {
     return next(error);
   }
