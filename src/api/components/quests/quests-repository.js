@@ -13,8 +13,8 @@ async function getQuestByName(name) {
   return Quests.findOne({ name: name });
 }
 
-async function createQuests(name, objective, rewards) {
-  return Quests.create({ name, objective, rewards });
+async function createQuests(name, objectives, rewards) {
+  return Quests.create({ name, objectives, rewards });
 }
 
 module.exports = {
