@@ -1,4 +1,4 @@
-const gamesRepository = require('./games-repository');
+const gamesRepository = require("./games-repository");
 
 async function getGames(limit, page) {
   return gamesRepository.getGames(limit, page);
@@ -18,7 +18,12 @@ async function gameNameExists(name) {
 }
 
 async function createGames(name, description, publisher, released_date) {
-  return gamesRepository.createGames(name, description, publisher, released_date);
+  return gamesRepository.createGames(
+    name,
+    description,
+    publisher,
+    released_date,
+  );
 }
 
 module.exports = {

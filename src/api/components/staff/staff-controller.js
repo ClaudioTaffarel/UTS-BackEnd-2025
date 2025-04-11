@@ -1,5 +1,5 @@
-const staffService = require('./staff-service');
-const { errorResponder, errorTypes } = require('../../../core/errors');
+const staffService = require("./staff-service");
+const { errorResponder, errorTypes } = require("../../../core/errors");
 
 async function getStaffs(request, response, next) {
   try {
@@ -16,9 +16,9 @@ async function getStaffById(request, response, next) {
     const staff = await staffService.getStaffById(request.params.id);
 
     if (!staff) {
-      throw errorResponder(errorTypes.NOT_FOUND, 'Staff not found');
+      throw errorResponder(errorTypes.NOT_FOUND, "Staff not found");
     }
-    
+
     return response.status(200).json(staff);
   } catch (error) {
     return next(error);
@@ -27,11 +27,11 @@ async function getStaffById(request, response, next) {
 
 async function getStaffByName(request, response, next) {
   try {
-    const { name } = request.params; 
+    const { name } = request.params;
     const staff = await staffService.getStaffByName(name);
 
     if (!staff) {
-      throw errorResponder(errorTypes.NOT_FOUND, 'Staff not found');
+      throw errorResponder(errorTypes.NOT_FOUND, "Staff not found");
     }
 
     return response.status(200).json(staff);
@@ -42,53 +42,50 @@ async function getStaffByName(request, response, next) {
 
 async function createStaff(request, response, next) {
   try {
-    const { 
-        name, 
-        worked_on, 
-        position
-    } = request.body;
+    const { name, worked_on, position } = request.body;
 
     if (!name) {
-      throw errorResponder(errorTypes.VALIDATION_ERROR, 'Name is required');
+      throw errorResponder(errorTypes.VALIDATION_ERROR, "Name is required");
     }
 
     if (await staffService.staffNameExists(name)) {
       throw errorResponder(
         errorTypes.OBJECT_ALREADY_TAKEN,
-        'Staff already listed'
+        "Staff already listed",
       );
     }
 
     if (!worked_on) {
-      throw errorResponder(errorTypes.VALIDATION_ERROR, 'Workplace is required');
+      throw errorResponder(
+        errorTypes.VALIDATION_ERROR,
+        "Workplace is required",
+      );
     }
 
     if (!position) {
-      throw errorResponder(errorTypes.VALIDATION_ERROR, 'Position is required');
+      throw errorResponder(errorTypes.VALIDATION_ERROR, "Position is required");
     }
 
-    const success = await staffService.createStaff(
-        name, 
-        worked_on, 
-        position
-    );
+    const success = await staffService.createStaff(name, worked_on, position);
 
     if (!success) {
       throw errorResponder(
         errorTypes.UNPROCESSABLE_ENTITY,
-        'Failed to create Staff Data'
+        "Failed to create Staff Data",
       );
     }
 
-    return response.status(200).json({ message: 'Staff Data created successfully' });
+    return response
+      .status(200)
+      .json({ message: "Staff Data created successfully" });
   } catch (error) {
     return next(error);
   }
 }
 
 module.exports = {
-    getStaffs,
-    getStaffById,
-    getStaffByName,
-    createStaff,
+  getStaffs,
+  getStaffById,
+  getStaffByName,
+  createStaff,
 };

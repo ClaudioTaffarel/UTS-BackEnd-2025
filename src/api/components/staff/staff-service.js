@@ -1,4 +1,4 @@
-const staffRepository = require('./staff-repository');
+const staffRepository = require("./staff-repository");
 
 async function getStaffs(limit, page) {
   return staffRepository.getStaffs(limit, page);
@@ -22,9 +22,9 @@ async function createStaff(name, worked_on, position) {
 }
 
 module.exports = {
-    getStaffs,
-    getStaffById,
-    getStaffByName,
-    staffNameExists,
-    createStaff,
+  getStaffs,
+  getStaffById,
+  getStaffByName,
+  staffNameExists,
+  createStaff,
 };

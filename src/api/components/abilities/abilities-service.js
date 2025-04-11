@@ -1,4 +1,4 @@
-const abilitiesRepository = require('./abilities-repository');
+const abilitiesRepository = require("./abilities-repository");
 
 async function getAbilities(limit, page) {
   return abilitiesRepository.getAbilities(limit, page);
@@ -18,13 +18,17 @@ async function AbilityNameExists(name) {
 }
 
 async function createAbilities(name, effect, associated_characters) {
-  return abilitiesRepository.createAbilities(name, effect, associated_characters);
+  return abilitiesRepository.createAbilities(
+    name,
+    effect,
+    associated_characters,
+  );
 }
 
 module.exports = {
-    getAbilities,
-    getAbilitiesById,
-    getAbilityByName,
-    AbilityNameExists,
-    createAbilities,
+  getAbilities,
+  getAbilitiesById,
+  getAbilityByName,
+  AbilityNameExists,
+  createAbilities,
 };

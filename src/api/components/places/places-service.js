@@ -1,4 +1,4 @@
-const placesRepository = require('./places-repository');
+const placesRepository = require("./places-repository");
 
 async function getPlaces(limit, page) {
   return placesRepository.getPlaces(limit, page);
@@ -22,9 +22,9 @@ async function createPlaces(name, description, inhabitants) {
 }
 
 module.exports = {
-    getPlaces,
-    getPlaceById,
-    getPlaceByName,
-    placeNameExists,
-    createPlaces,
+  getPlaces,
+  getPlaceById,
+  getPlaceByName,
+  placeNameExists,
+  createPlaces,
 };

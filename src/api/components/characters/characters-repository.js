@@ -1,4 +1,4 @@
-const { Characters } = require('../../../models');
+const { Characters } = require("../../../models");
 
 async function getCharacters(limit = 20, page = 0) {
   const skip = page * limit;
@@ -14,7 +14,7 @@ async function getCharacterByName(name) {
 }
 
 async function createCharacters(name, description, gender, race) {
-  return Characters.create({ name, description, gender, race});
+  return Characters.create({ name, description, gender, race });
 }
 
 module.exports = {
