@@ -21,8 +21,8 @@ module.exports = () => {
   abilites(app);
   dungeons(app);
   quests(app);
-  events(app)
-  items(app)
+  events(app);
+  items(app);
   
   return app;
 };
