@@ -7,6 +7,8 @@ const character = require('./components/characters/characters-route');
 const abilites = require('./components/abilities/abilities-route');
 const dungeons = require('./components/dungeons/dungeons-route');
 const quests = require('./components/quests/quests-route');
+const monsters = require('./components/monsters/monsters-route');
+const bosses = require('./components/bosses/bosses-route');
 
 module.exports = () => {
   const app = express.Router();
@@ -18,6 +20,8 @@ module.exports = () => {
   abilites(app);
   dungeons(app);
   quests(app);
+  monsters(app);
+  bosses(app);
   
   return app;
 };
