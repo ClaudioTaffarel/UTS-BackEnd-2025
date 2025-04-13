@@ -67,7 +67,7 @@ async function createItems(request, response, next) {
       throw errorResponder(errorTypes.VALIDATION_ERROR, 'appearance must be a non-empty array of strings');
     }
 
-    const success = await itemsService.createitems(
+    const success = await itemsService.createItems(
         name,
         description,
         appearance
