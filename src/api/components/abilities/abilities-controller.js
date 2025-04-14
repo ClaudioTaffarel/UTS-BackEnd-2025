@@ -48,7 +48,7 @@ async function createAbilities(request, response, next) {
       throw errorResponder(errorTypes.VALIDATION_ERROR, "Name is required");
     }
 
-    if (await abilitiesService.AbilityNameExists(name)) {
+    if (await abilitiesService.abilityNameExists(name)) {
       throw errorResponder(
         errorTypes.OBJECT_ALREADY_TAKEN,
         "Ability already exists",

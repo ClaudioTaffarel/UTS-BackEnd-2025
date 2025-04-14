@@ -4,7 +4,7 @@ async function getAbilities(limit, page) {
   return abilitiesRepository.getAbilities(limit, page);
 }
 
-async function getAbilitiesById(id) {
+async function getAbilityById(id) {
   return abilitiesRepository.getAbilityById(id);
 }
 
@@ -27,7 +27,7 @@ async function createAbilities(name, effect, associated_characters) {
 
 module.exports = {
   getAbilities,
-  getAbilitiesById,
+  getAbilityById,
   getAbilityByName,
   AbilityNameExists,
   createAbilities,
