@@ -1,4 +1,5 @@
 module.exports = (db) =>
+
   db.model(
     "Staff",
     db.Schema({
@@ -7,3 +8,4 @@ module.exports = (db) =>
       position: String, // dia kerja sebagai apa?
     }),
   );
+

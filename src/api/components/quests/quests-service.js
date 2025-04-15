@@ -17,8 +17,8 @@ async function questNameExists(name) {
   return !!quest;
 }
 
-async function createQuests(name, objective, rewards) {
-  return questsRepository.createQuests(name, objective, rewards);
+async function createQuests(name, objectives, rewards) {
+  return questsRepository.createQuests(name, objectives, rewards);
 }
 
 module.exports = {
