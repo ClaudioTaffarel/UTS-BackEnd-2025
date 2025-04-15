@@ -1,4 +1,3 @@
-const { getEvents, getEventsById, createEvents } = require('./events-repository');
 const eventsRepository = require('./events-repository');
 
 async function getEvents(limit, page) {
