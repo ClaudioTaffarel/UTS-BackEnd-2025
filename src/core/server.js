@@ -1,15 +1,15 @@
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const express = require('express');
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const express = require("express");
 
-const config = require('./config');
-const routes = require('../api/routes');
-const { errorResponder, errorTypes } = require('./errors');
+const config = require("./config");
+const routes = require("../api/routes");
+const { errorResponder, errorTypes } = require("./errors");
 
 const app = express();
 
 // Useful if behind a reverse proxy (Heroku, Bluemix, AWS ELB, Nginx, etc).
-app.enable('trust proxy');
+app.enable("trust proxy");
 
 app.use(express.json());
 
@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cors());
 
 // Let you use HTTP verbs such as PUT or DELETE in places where the client doesn't support it
-app.use(require('method-override')());
+app.use(require("method-override")());
 
 // Middleware that transforms the raw string of request.body into JSON
 app.use(bodyParser.json());
@@ -30,7 +30,7 @@ app.use(`${config.api.prefix}`, routes());
 
 // Handle 404 route
 app.use((request, response, next) =>
-  next(errorResponder(errorTypes.ROUTE_NOT_FOUND, 'Route not found'))
+  next(errorResponder(errorTypes.ROUTE_NOT_FOUND, "Route not found")),
 );
 
 // Send error response to the caller
@@ -38,10 +38,10 @@ app.use((request, response, next) =>
 app.use((error, request, response, next) =>
   response.status(error.status || 500).json({
     statusCode: error.status || 500,
-    error: error.code || 'UNKNOWN_ERROR',
-    description: error.description || 'Unknown error',
-    message: error.message || 'An error has occurred',
-  })
+    error: error.code || "UNKNOWN_ERROR",
+    description: error.description || "Unknown error",
+    message: error.message || "An error has occurred",
+  }),
 );
 
 module.exports = app;

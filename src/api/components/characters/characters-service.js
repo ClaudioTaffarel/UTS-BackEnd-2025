@@ -1,4 +1,4 @@
-const charactersRepository = require('./characters-repository');
+const charactersRepository = require("./characters-repository");
 
 async function getCharacters(limit, page) {
   return charactersRepository.getCharacters(limit, page);

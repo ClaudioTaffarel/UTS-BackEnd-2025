@@ -1,5 +1,5 @@
-const gamesService = require('./games-service');
-const { errorResponder, errorTypes } = require('../../../core/errors');
+const gamesService = require("./games-service");
+const { errorResponder, errorTypes } = require("../../../core/errors");
 
 async function getGames(request, response, next) {
   try {
@@ -16,9 +16,9 @@ async function getGameById(request, response, next) {
     const game = await gamesService.getGameById(request.params.id);
 
     if (!game) {
-      throw errorResponder(errorTypes.NOT_FOUND, 'Game not found');
+      throw errorResponder(errorTypes.NOT_FOUND, "Game not found");
     }
-    
+
     return response.status(200).json(game);
   } catch (error) {
     return next(error);
@@ -27,11 +27,11 @@ async function getGameById(request, response, next) {
 
 async function getGameByName(request, response, next) {
   try {
-    const { name } = request.params; 
+    const { name } = request.params;
     const game = await gamesService.getGameByName(name);
 
     if (!game) {
-      throw errorResponder(errorTypes.NOT_FOUND, 'Game not found');
+      throw errorResponder(errorTypes.NOT_FOUND, "Game not found");
     }
 
     return response.status(200).json(game);
@@ -42,51 +42,57 @@ async function getGameByName(request, response, next) {
 
 async function createGames(request, response, next) {
   try {
-    const { 
-        name,
-        description,
-        publisher,
-        released_date,
-    } = request.body;
+    const { name, description, publisher, released_date } = request.body;
 
     if (!name) {
-      throw errorResponder(errorTypes.VALIDATION_ERROR, 'Name is required');
+      throw errorResponder(errorTypes.VALIDATION_ERROR, "Name is required");
     }
 
     if (await gamesService.gameNameExists(name)) {
       throw errorResponder(
         errorTypes.OBJECT_ALREADY_TAKEN,
-        'Game already exists'
+        "Game already exists",
       );
     }
 
     if (!description) {
-      throw errorResponder(errorTypes.VALIDATION_ERROR, 'Description is required');
+      throw errorResponder(
+        errorTypes.VALIDATION_ERROR,
+        "Description is required",
+      );
     }
 
     if (!publisher) {
-      throw errorResponder(errorTypes.VALIDATION_ERROR, 'Publisher Name is required');
+      throw errorResponder(
+        errorTypes.VALIDATION_ERROR,
+        "Publisher Name is required",
+      );
     }
 
     if (!released_date) {
-      throw errorResponder(errorTypes.VALIDATION_ERROR, 'Released Date is required');
+      throw errorResponder(
+        errorTypes.VALIDATION_ERROR,
+        "Released Date is required",
+      );
     }
 
     const success = await gamesService.createGames(
-        name,
-        description,
-        publisher,
-        released_date
+      name,
+      description,
+      publisher,
+      released_date,
     );
 
     if (!success) {
       throw errorResponder(
         errorTypes.UNPROCESSABLE_ENTITY,
-        'Failed to create Games Data'
+        "Failed to create Games Data",
       );
     }
 
-    return response.status(200).json({ message: 'Games Data created successfully' });
+    return response
+      .status(200)
+      .json({ message: "Games Data created successfully" });
   } catch (error) {
     return next(error);
   }

@@ -1,4 +1,4 @@
-const { Abilities } = require('../../../models');
+const { Abilities } = require("../../../models");
 
 async function getAbilities(limit = 20, page = 0) {
   const skip = page * limit;
@@ -18,8 +18,8 @@ async function createAbilities(name, effect, associated_characters) {
 }
 
 module.exports = {
-    getAbilities,
-    getAbilityById,
-    getAbilityByName,
-    createAbilities,
+  getAbilities,
+  getAbilityById,
+  getAbilityByName,
+  createAbilities,
 };

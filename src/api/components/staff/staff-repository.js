@@ -1,4 +1,4 @@
-const { Staff } = require('../../../models');
+const { Staff } = require("../../../models");
 
 async function getStaffs(limit = 20, page = 0) {
   const skip = page * limit;
@@ -18,8 +18,8 @@ async function createStaff(name, worked_on, position) {
 }
 
 module.exports = {
-    getStaffs,
-    getStaffById,
-    getStaffByName,
-    createStaff,
+  getStaffs,
+  getStaffById,
+  getStaffByName,
+  createStaff,
 };
