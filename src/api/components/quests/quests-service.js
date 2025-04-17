@@ -1,4 +1,4 @@
-const questsRepository = require('./quests-repository');
+const questsRepository = require("./quests-repository");
 
 async function getQuests(limit, page) {
   return questsRepository.getQuests(limit, page);
@@ -22,9 +22,9 @@ async function createQuests(name, objectives, rewards) {
 }
 
 module.exports = {
-    getQuests,
-    getQuestById,
-    getQuestByName,
-    questNameExists,
-    createQuests,
+  getQuests,
+  getQuestById,
+  getQuestByName,
+  questNameExists,
+  createQuests,
 };

@@ -1,4 +1,4 @@
-const { Bosses } = require('../../../models');
+const { Bosses } = require("../../../models");
 
 async function getBosses(limit = 20, page = 0) {
   const skip = page * limit;
@@ -18,8 +18,8 @@ async function createBosses(name, description, dungeon, appearance) {
 }
 
 module.exports = {
-    getBosses,
-    getBossById,
-    getBossByName,
-    createBosses,
+  getBosses,
+  getBossById,
+  getBossByName,
+  createBosses,
 };

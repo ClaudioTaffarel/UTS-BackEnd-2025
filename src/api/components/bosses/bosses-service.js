@@ -1,4 +1,4 @@
-const bossesRepository = require('./bosses-repository');
+const bossesRepository = require("./bosses-repository");
 
 async function getBosses(limit, page) {
   return bossesRepository.getBosses(limit, page);
@@ -22,9 +22,9 @@ async function createBosses(name, description, dungeon, appearance) {
 }
 
 module.exports = {
-    getBosses,
-    getBossById,
-    getBossByName,
-    bossNameExists,
-    createBosses,
+  getBosses,
+  getBossById,
+  getBossByName,
+  bossNameExists,
+  createBosses,
 };
