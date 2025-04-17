@@ -13,7 +13,7 @@ async function getDungeons(request, response, next) {
 
 async function getDungeonById(request, response, next) {
   try {
-    const dungeon = await placesService.getDungeonById(request.params.id);
+    const dungeon = await dungeonsService.getDungeonById(request.params.id);
 
     if (!dungeon) {
       throw errorResponder(errorTypes.NOT_FOUND, 'Dungeon not found');
