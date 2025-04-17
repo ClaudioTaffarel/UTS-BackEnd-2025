@@ -5,7 +5,7 @@ async function getDungeons(limit, page) {
 }
 
 async function getDungeonById(id) {
-  return placesRepository.getDungeonById(id);
+  return dungeonsRepository.getDungeonById(id);
 }
 
 async function getDungeonByName(name) {
