@@ -1,5 +1,4 @@
 const bodyParser = require("body-parser");
-const cors = require("cors");
 const express = require("express");
 
 const config = require("./config");
@@ -17,7 +16,7 @@ app.use((request, response, next) =>
   next(errorResponder(errorTypes.ROUTE_NOT_FOUND, "Route not found")),
 );
 
-app.use((error, request, response, next) =>
+app.use((error, request, response) =>
   response.status(error.status || 500).json({
     statusCode: error.status || 500,
     error: error.code || "UNKNOWN_ERROR",
