@@ -5,7 +5,7 @@ async function getBosses(limit, page) {
 }
 
 async function getBossById(id) {
-  return bossesRepository.getBossesById(id);
+  return bossesRepository.getBossById(id);
 }
 
 async function getBossByName(name) {
