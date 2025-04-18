@@ -26,6 +26,6 @@ module.exports = () => {
   bosses(app);
   events(app);
   items(app);
-
+  
   return app;
 };

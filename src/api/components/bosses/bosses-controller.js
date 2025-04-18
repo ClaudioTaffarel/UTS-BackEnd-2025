@@ -62,21 +62,6 @@ async function createBosses(request, response, next) {
       );
     }
 
-    if (!dungeon) {
-      throw errorResponder(errorTypes.VALIDATION_ERROR, "Dungeon is required");
-    }
-
-    if (
-      !Array.isArray(appearance) ||
-      appearance.length === 0 ||
-      !appearance.every((i) => typeof i === "string")
-    ) {
-      throw errorResponder(
-        errorTypes.VALIDATION_ERROR,
-        "Appearance must be a non-empty array of strings",
-      );
-    }
-
     const success = await bossesService.createBosses(
       name,
       description,

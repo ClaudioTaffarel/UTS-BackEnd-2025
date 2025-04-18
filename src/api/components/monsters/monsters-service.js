@@ -1,4 +1,4 @@
-const monstersRepository = require("./monsters-repository");
+const monstersRepository = require('./monsters-repository');
 
 async function getMonsters(limit, page) {
   return monstersRepository.getMonsters(limit, page);
