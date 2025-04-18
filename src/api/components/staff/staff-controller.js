@@ -55,8 +55,15 @@ async function createStaff(request, response, next) {
       );
     }
 
-    if (!Array.isArray(worked_on) || worked_on.length === 0 || !worked_on.every(i => typeof i === 'string')) {
-      throw errorResponder(errorTypes.VALIDATION_ERROR, 'There must be something that they worked on right?');
+    if (
+      !Array.isArray(worked_on) ||
+      worked_on.length === 0 ||
+      !worked_on.every((i) => typeof i === "string")
+    ) {
+      throw errorResponder(
+        errorTypes.VALIDATION_ERROR,
+        "There must be something that they worked on right?",
+      );
     }
 
     if (!position) {

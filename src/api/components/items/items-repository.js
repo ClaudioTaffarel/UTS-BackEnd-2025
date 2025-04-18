@@ -1,4 +1,4 @@
-const { Items } = require('../../../models');
+const { Items } = require("../../../models");
 
 async function getItems(limit = 20, page = 0) {
   const skip = page * limit;
@@ -18,8 +18,8 @@ async function createItems(name, description, appearance) {
 }
 
 module.exports = {
-    getItems,
-    getItemsById,
-    getItemsByName,
-    createItems,
+  getItems,
+  getItemsById,
+  getItemsByName,
+  createItems,
 };

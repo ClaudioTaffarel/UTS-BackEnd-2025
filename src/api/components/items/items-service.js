@@ -1,4 +1,4 @@
-const itemsRepository = require('./items-repository');
+const itemsRepository = require("./items-repository");
 
 async function getItems(limit, page) {
   return itemsRepository.getItems(limit, page);
@@ -22,9 +22,9 @@ async function createItems(name, description, appearance) {
 }
 
 module.exports = {
-    getItems,
-    getItemsById,
-    getItemsByName,
-    itemsNameExists,
-    createItems,
+  getItems,
+  getItemsById,
+  getItemsByName,
+  itemsNameExists,
+  createItems,
 };

@@ -1,5 +1,4 @@
 const errorTypes = {
-
   SERVER: {
     description: "⚠️ Server error!!",
     status: 500,

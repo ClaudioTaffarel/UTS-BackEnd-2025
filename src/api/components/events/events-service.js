@@ -1,4 +1,4 @@
-const eventsRepository = require('./events-repository');
+const eventsRepository = require("./events-repository");
 
 async function getEvents(limit, page) {
   return eventsRepository.getEvents(limit, page);
@@ -22,9 +22,9 @@ async function createEvents(name, location, appearance) {
 }
 
 module.exports = {
-    getEvents,
-    getEventsById,
-    getEventsByName,
-    EventsNameExists,
-    createEvents,
+  getEvents,
+  getEventsById,
+  getEventsByName,
+  EventsNameExists,
+  createEvents,
 };
