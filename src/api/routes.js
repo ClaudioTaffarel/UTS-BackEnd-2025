@@ -10,6 +10,7 @@ const quests = require('./components/quests/quests-route');
 const monsters = require('./components/monsters/monsters-route');
 const bosses = require('./components/bosses/bosses-route');
 
+
 module.exports = () => {
   const app = express.Router();
 
@@ -22,6 +23,7 @@ module.exports = () => {
   quests(app);
   monsters(app);
   bosses(app);
+
   
   return app;
 };
