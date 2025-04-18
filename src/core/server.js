@@ -16,7 +16,7 @@ app.use((request, response, next) =>
   next(errorResponder(errorTypes.ROUTE_NOT_FOUND, "Route not found")),
 );
 
-app.use((error, request, response) =>
+app.use((error, request, response, next) =>
   response.status(error.status || 500).json({
     statusCode: error.status || 500,
     error: error.code || "UNKNOWN_ERROR",
