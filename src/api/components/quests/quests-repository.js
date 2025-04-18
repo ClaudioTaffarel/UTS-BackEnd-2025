@@ -1,4 +1,4 @@
-const { Quests } = require('../../../models');
+const { Quests } = require("../../../models");
 
 async function getQuests(limit = 20, page = 0) {
   const skip = page * limit;
@@ -18,8 +18,8 @@ async function createQuests(name, objectives, rewards) {
 }
 
 module.exports = {
-    getQuests,
-    getQuestById,
-    getQuestByName,
-    createQuests,
+  getQuests,
+  getQuestById,
+  getQuestByName,
+  createQuests,
 };

@@ -1,11 +1,11 @@
-const dungeonsRepository = require('./dungeons-repository');
+const dungeonsRepository = require("./dungeons-repository");
 
 async function getDungeons(limit, page) {
   return dungeonsRepository.getDungeons(limit, page);
 }
 
 async function getDungeonById(id) {
-  return placesRepository.getDungeonById(id);
+  return dungeonsRepository.getDungeonById(id);
 }
 
 async function getDungeonByName(name) {
@@ -22,9 +22,9 @@ async function createDungeons(name, description, appearance) {
 }
 
 module.exports = {
-    getDungeons,
-    getDungeonById,
-    getDungeonByName,
-    dungeonNameExists,
-    createDungeons,
+  getDungeons,
+  getDungeonById,
+  getDungeonByName,
+  dungeonNameExists,
+  createDungeons,
 };

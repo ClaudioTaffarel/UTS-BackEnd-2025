@@ -1,4 +1,4 @@
-const { Places } = require('../../../models');
+const { Places } = require("../../../models");
 
 async function getPlaces(limit = 20, page = 0) {
   const skip = page * limit;
@@ -18,8 +18,8 @@ async function createPlaces(name, description, inhabitants) {
 }
 
 module.exports = {
-    getPlaces,
-    getPlaceById,
-    getPlaceByName,
-    createPlaces,
+  getPlaces,
+  getPlaceById,
+  getPlaceByName,
+  createPlaces,
 };

@@ -5,7 +5,7 @@ async function getMonsters(limit, page) {
 }
 
 async function getMonsterById(id) {
-  return monstersRepository.getMonstersById(id);
+  return monstersRepository.getMonsterById(id);
 }
 
 async function getMonsterByName(name) {
@@ -22,9 +22,9 @@ async function createMonsters(name, description, appearance) {
 }
 
 module.exports = {
-    getMonsters,
-    getMonsterById,
-    getMonsterByName,
-    monsterNameExists,
-    createMonsters,
+  getMonsters,
+  getMonsterById,
+  getMonsterByName,
+  monsterNameExists,
+  createMonsters,
 };

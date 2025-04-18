@@ -1,17 +1,16 @@
-const express = require('express');
+const express = require("express");
 
-const games = require('./components/games/games-route');
-const staff = require('./components/staff/staff-route');
-const places = require('./components/places/places-route');
-const character = require('./components/characters/characters-route');
-const abilites = require('./components/abilities/abilities-route');
-const dungeons = require('./components/dungeons/dungeons-route');
-const quests = require('./components/quests/quests-route');
-const monsters = require('./components/monsters/monsters-route');
-const bosses = require('./components/bosses/bosses-route');
-const events = require('./components/events/events-route');
-const items = require('./components/items/items-route');
-
+const games = require("./components/games/games-route");
+const staff = require("./components/staff/staff-route");
+const places = require("./components/places/places-route");
+const character = require("./components/characters/characters-route");
+const abilites = require("./components/abilities/abilities-route");
+const dungeons = require("./components/dungeons/dungeons-route");
+const quests = require("./components/quests/quests-route");
+const monsters = require("./components/monsters/monsters-route");
+const bosses = require("./components/bosses/bosses-route");
+const events = require("./components/events/events-route");
+const items = require("./components/items/items-route");
 
 module.exports = () => {
   const app = express.Router();
@@ -25,6 +24,8 @@ module.exports = () => {
   quests(app);
   monsters(app);
   bosses(app);
+  events(app);
+  items(app);
   
   return app;
 };

@@ -1,4 +1,4 @@
-const { Events } = require('../../../models');
+const { Events } = require("../../../models");
 
 async function getEvents(limit = 20, page = 0) {
   const skip = page * limit;
@@ -18,8 +18,8 @@ async function createEvents(name, location, appearance) {
 }
 
 module.exports = {
-    getEvents,
-    getEventsById,
-    getEventsByName,
-    createEvents,
+  getEvents,
+  getEventsById,
+  getEventsByName,
+  createEvents,
 };

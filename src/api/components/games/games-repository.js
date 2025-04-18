@@ -1,4 +1,4 @@
-const { Games } = require('../../../models');
+const { Games } = require("../../../models");
 
 async function getGames(limit = 20, page = 0) {
   const skip = page * limit;
