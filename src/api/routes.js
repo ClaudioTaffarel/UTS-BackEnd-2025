@@ -12,7 +12,7 @@ const bosses = require("./components/bosses/bosses-route");
 const events = require("./components/events/events-route");
 const items = require("./components/items/items-route");
 const deities = require("./components/deities/deities-route");
-
+const factions = require("./components/factions/factions-route");
 module.exports = () => {
   const app = express.Router();
 
@@ -28,6 +28,7 @@ module.exports = () => {
   events(app);
   items(app);
   deities(app);
+  factions(app);
 
   return app;
 };
