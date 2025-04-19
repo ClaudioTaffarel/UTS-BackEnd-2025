@@ -13,7 +13,7 @@ const events = require("./components/events/events-route");
 const items = require("./components/items/items-route");
 const minigames = require("./components/minigames/minigames.route");
 const deities = require("./components/deities/deities-route");
-
+const factions = require("./components/factions/factions-route");
 module.exports = () => {
   const app = express.Router();
 
@@ -30,6 +30,7 @@ module.exports = () => {
   items(app);
   minigames(app);
   deities(app);
+  factions(app);
 
   return app;
 };
