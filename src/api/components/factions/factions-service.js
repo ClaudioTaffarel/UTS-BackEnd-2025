@@ -1,4 +1,4 @@
-const factionsRepository = require("./games-repository");
+const factionsRepository = require("./factions-repository");
 
 async function getFactions(limit, page) {
   return factionsRepository.getFactions(limit, page);
@@ -13,23 +13,23 @@ async function getFactionByName(name) {
 }
 
 async function factionNameExists(name) {
-  const game = await factionsRepository.getFactionByName(name);
-  return !!game;
+  const faction = await factionsRepository.getFactionByName(name);
+  return !!faction;
 }
 
 async function createFactions(
   name,
   type,
   description,
-  publisher,
-  released_date,
+  notable_members,
+  affiliated_games,
 ) {
   return factionsRepository.createFactions(
     name,
     type,
     description,
-    publisher,
-    released_date,
+    notable_members,
+    affiliated_games,
   );
 }
 

@@ -16,7 +16,7 @@ async function getFactionById(request, response, next) {
     const faction = await factionsService.getFactionById(request.params.id);
 
     if (!faction) {
-      throw errorResponder(errorTypes.NOT_FOUND, "Game not found");
+      throw errorResponder(errorTypes.NOT_FOUND, "faction not found");
     }
 
     return response.status(200).json(faction);
@@ -49,7 +49,7 @@ async function createFactions(request, response, next) {
       throw errorResponder(errorTypes.VALIDATION_ERROR, "Name is required");
     }
 
-    if (await factionsService.gameNameExists(name)) {
+    if (await factionsService.factionNameExists(name)) {
       throw errorResponder(
         errorTypes.OBJECT_ALREADY_TAKEN,
         "Faction already exists",
@@ -66,21 +66,18 @@ async function createFactions(request, response, next) {
         "Description is required",
       );
     }
-
     if (!notable_members) {
       throw errorResponder(
         errorTypes.VALIDATION_ERROR,
-        "Notable_members is required",
+        "notable_members is required",
       );
     }
-
     if (!affiliated_games) {
       throw errorResponder(
         errorTypes.VALIDATION_ERROR,
         "affiliated_games is required",
       );
     }
-
     const success = await factionsService.createFactions(
       name,
       type,
