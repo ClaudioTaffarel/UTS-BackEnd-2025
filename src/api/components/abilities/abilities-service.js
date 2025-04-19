@@ -12,7 +12,7 @@ async function getAbilityByName(name) {
   return abilitiesRepository.getAbilityByName(name);
 }
 
-async function AbilityNameExists(name) {
+async function abilityNameExists(name) {
   const ability = await abilitiesRepository.getAbilityByName(name);
   return !!ability;
 }
@@ -29,6 +29,6 @@ module.exports = {
   getAbilities,
   getAbilityById,
   getAbilityByName,
-  AbilityNameExists,
+  abilityNameExists,
   createAbilities,
 };
